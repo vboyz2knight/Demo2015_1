@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Equipments>
+  <Device>
+    <Name>Bipap</Name>
+    <Indication></Indication>
+    <ContraIndication></ContraIndication>
+    <Descriptions></Descriptions>
+    <Notes></Notes>
+  </Device>
+  <Device>
+    <Name>High-Flow-Nasal-Cannula</Name>
+    <Indication></Indication>
+    <ContraIndication></ContraIndication>
+    <Descriptions></Descriptions>
+    <Notes></Notes>
+  </Device>
+  <Device>
+    <Name>Ventilator</Name>
+    <Indication></Indication>
+    <ContraIndication></ContraIndication>
+    <Descriptions></Descriptions>
+    <Notes></Notes>
+  </Device>
+</Equipments>

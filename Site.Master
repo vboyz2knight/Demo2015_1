@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Demo2015_1.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width,inital-scale=1.0" />
+    <link href="/Content/bootstrap.min.css" rel="Stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Hieu Trinh</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a id="A6" runat="server" href="~/">Home</a></li>
+        <li><a id="A8" runat="server" href="#">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Respiratory <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a id="A1" runat="server" href="~/Respiratory/ABG.aspx">ABG Calculator</a></li>
+            <li><a id="A2" runat="server" href="~/Respiratory/DesiredMinuteVentilation.aspx">Desired Minute Ventilation</a></li>
+            <li><a id="A10" runat="server" href="~/Respiratory/DesireFIO2.aspx">Desired FIO2</a></li>
+            <li><a id="A3" runat="server" href="~/Respiratory/InitialVentSetting.aspx">Initial Ventilator Settings</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a id="A9" runat="server" href="~/SpendingAnalyzer/SpendingDisplay.aspx">Spending Analyzer</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <br /><br /><br /><br />
+    <div class="container">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <br /><br /><br /><br />
+    <footer>
+        <div class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container">
+               <p class="navbar-text pull-left">Site Built By Hieu Trinh</p>
+               <a href="https://www.linkedin.com/pub/hieu-trinh/50/7a/548" class="navbar-button btn-info btn pull-right">LinkedLN</a>
+               <a href="https://github.com/vboyz2knight" class="navbar-button btn-success btn pull-right">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

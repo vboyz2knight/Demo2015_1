@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Transactions>
+  <Transaction>
+    <Date>03/26/2012</Date>
+    <Description>DEBIT CARD PURCHASE AT INSIGHT CABLE, 502-357-4400, KY ON 032512 FROM CARD#: XXXXXXXXXXXX75</Description>
+    <CheckNumber></CheckNumber>
+    <Amount>-45.00</Amount>
+  </Transaction>
+<Transaction>
+    <Date>03/23/2012</Date>
+    <Description>DEBIT CARD PURCHASE AT METRO ANIMAL SERVI, 502-574-3211, KY ON 031912 FROM CARD#: XXXXXXXXXXXX7</Description>
+    <CheckNumber></CheckNumber>
+    <Amount>-24.50</Amount>
+  </Transaction>
+<Transaction>
+    <Date>03/22/2012</Date>
+    <Description>MERCHANT PAYMENT KROGER AT LOC O35081 5533 NEW CUT RD. LOUISVILLE KY</Description>
+    <CheckNumber></CheckNumber>
+    <Amount>-45.35</Amount>
+  </Transaction>
+<Transaction>
+    <Date>03/21/2012</Date>
+    <Description>MERCHANT PAYMENT SOUTHSIDE PIC PA AT LOC 790501 6629 SOUTHSIDE DR. LOUISVILLE KY</Description>
+    <CheckNumber></CheckNumber>
+    <Amount>-17.59</Amount>
+  </Transaction>
+<Transaction>
+    <Date>03/21/2012</Date>
+    <Description>MERCHANT PAYMENT Wal-Mart Super AT LOC 170014 5417 WAL-SAMS LOUISVILLE KY</Description>
+    <CheckNumber></CheckNumber>
+    <Amount>-13.35</Amount>
+  </Transaction>
+<Transaction>
+    <Date>03/19/2012</Date>
+    <Description>MERCHANT PAYMENT KROGER AT LOC O75206 3165 S. SECOND LOUISVILLE KY</Description>
+    <CheckNumber></CheckNumber>
+    <Amount>-25.23</Amount>
+  </Transaction>
+</Transactions>
+
