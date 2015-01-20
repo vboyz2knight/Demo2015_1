@@ -1,0 +1,18 @@
+[submodule "MyTraceLogger"]
+	path = MyTraceLogger
+	url = https://github.com/vboyz2knight/MyTraceLogger
+[submodule "ABG"]
+	path = ABG
+	url = https://github.com/vboyz2knight/ABG
+[submodule "SpendingLogic"]
+	path = SpendingLogic
+	url = https://github.com/vboyz2knight/SpendingLogic
+[submodule "SpendingDataAccess"]
+	path = SpendingDataAccess
+	url = https://github.com/vboyz2knight/SpendingDataAccess
+[submodule "SimpleMathExpression"]
+	path = SimpleMathExpression
+	url = https://github.com/vboyz2knight/SimpleMathExpression
+[submodule "RetrieveEquation"]
+	path = RetrieveEquation
+	url = https://github.com/vboyz2knight/RetrieveEquation
