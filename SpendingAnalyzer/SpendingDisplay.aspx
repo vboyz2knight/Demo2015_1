@@ -4,10 +4,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form id="Form1" runat="server">
-        
-        <div class="container">
-            <nav class="navbar navbar-default" role="navigation">
+    <asp:MultiView ID="MultiView1" runat="server">
+        <asp:View ID="NoData" runat="server">
+            <asp:Label ID="lblNoData" runat="server" Text="There are no data in the Database."></asp:Label>
+        </asp:View>
+        <asp:View ID="HasData" runat="server">
+            <form id="Form1" runat="server">
+                <div class="container">
+                    <nav class="navbar navbar-default" role="navigation">
          <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -32,79 +36,63 @@
               </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
-        </div>
-        <hr />
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <button class="navbar-button btn-info btn">Reset</button>
-                    <asp:Chart ID="Chart1" runat="server" Height="300px" BackImageAlignment="Center" Width="300px" OnClick="Chart1_Click">
-                        <Series>
-                            <asp:Series ChartType="Pie" Name="Series1" Legend="Legend1">
-                            </asp:Series>
-                        </Series>
-                        <ChartAreas>
-                            <asp:ChartArea Name="ChartArea1">
-                                <Area3DStyle Enable3D="True" />
-                            </asp:ChartArea>
-                        </ChartAreas>
-                        <Legends>
-                            <asp:Legend Name="Legend1">
-                            </asp:Legend>
-                        </Legends>
-                        <Titles>
-                            <asp:Title Alignment="TopLeft" Name="Title1" Text="Spending by Category">
-                            </asp:Title>
-                        </Titles>
-                    </asp:Chart>
                 </div>
-                <div class="col-md-6">
-                    <div class="container">
-                        <div class="container-fluid">
-                            <h3>Datas from A to B.</h3>
+                <hr />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button class="navbar-button btn-info btn">Reset</button>
+                            <asp:Chart ID="Chart1" runat="server" Height="300px" BackImageAlignment="Center" Width="300px" OnClick="Chart1_Click">
+                                <Series>
+                                    <asp:Series ChartType="Pie" Name="Series1" Legend="Legend1">
+                                    </asp:Series>
+                                </Series>
+                                <ChartAreas>
+                                    <asp:ChartArea Name="ChartArea1">
+                                        <Area3DStyle Enable3D="True" />
+                                    </asp:ChartArea>
+                                </ChartAreas>
+                                <Legends>
+                                    <asp:Legend Name="Legend1">
+                                    </asp:Legend>
+                                </Legends>
+                                <Titles>
+                                    <asp:Title Alignment="TopLeft" Name="Title1" Text="Spending by Category">
+                                    </asp:Title>
+                                </Titles>
+                            </asp:Chart>
                         </div>
-                        <br />
-                        <div class="container-fluid">Total spendings: 123.</div>
-                        <br />
-                        <div class="container-fluid">Total income: 123.</div>
-                        <br />
+                        <div class="col-md-6">
+                            <div class="container">
+                                <div class="container-fluid">
+                                    <h3>Datas from A to B.</h3>
+                                </div>
+                                <br />
+                                <div class="container-fluid">Total spendings: 123.</div>
+                                <br />
+                                <div class="container-fluid">Total income: 123.</div>
+                                <br />
 
-                        <div class="container-fluid">Top 3 Spending categories:</div>
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                        </ul>
+                                <div class="container-fluid">Top 3 Spending categories:</div>
+                                <ul>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <hr />
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <asp:GridView ID="GridView1" runat="server" AllowSorting="True"></asp:GridView>
-                </div>
-                <div class="col-md-6">
-                    <div class="container">
-                        <div class="container-fluid">
-                            <h3>Datas from A to B.</h3>
+                <hr />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <asp:GridView ID="GridView1" runat="server" AllowSorting="True"></asp:GridView>
                         </div>
-                        <br />
-                        <div class="container-fluid">Total spendings: 123.</div>
-                        <br />
-                        <div class="container-fluid">Total income: 123.</div>
-                        <br />
-
-                        <div class="container-fluid">Top 3 Spending categories:</div>
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
-    </form>
+            </form>
+        </asp:View>
+    </asp:MultiView>
+
 </asp:Content>

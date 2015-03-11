@@ -82,10 +82,25 @@ namespace Demo2015_1.SpendingAnalyzer
                 currentTransaction = tmpTransaction;
                 Session["currentTransaction"] = tmpTransaction;
             }
-            else
+            else if (categorizedTransactionList != null && categorizedTransactionList.Count>0)
             {
                 //all un-categorize transaction has been categorized
-                Server.Transfer("SpendingDisplay.aspx");
+                SpendingLogic.SpendingLogic spendingLogic = new SpendingLogic.SpendingLogic();
+                if (spendingLogic.SaveDataToDB(categorizedTransactionList, filterCategoryList))
+                {
+                    //remove all session datas
+                    Session.Remove("unCategorizedTransactionList");
+                    Session.Remove("currentTransaction");
+                    Session.Remove("filterCategoryList");
+                    Session.Remove("categorizedTransactionList");
+                    Session.Remove("categoryList");
+
+                    Server.Transfer("SpendingDisplay.aspx");
+                }
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException("Unexpected Logic Error!");
             }
         }
 

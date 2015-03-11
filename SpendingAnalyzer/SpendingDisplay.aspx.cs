@@ -11,12 +11,58 @@ namespace Demo2015_1.SpendingAnalyzer
 {
     public partial class SpendingAnyalyzerDisplay : System.Web.UI.Page
     {
+        List<SpendingDataAccess.displayCategorizedTransaction> displayCategorizedTrasactionList = new List<SpendingDataAccess.displayCategorizedTransaction>();
+            
         protected void Page_Load(object sender, EventArgs e)
         {
-            Test_GetData(); 
+            if(!IsPostBack)
+            {
+                //Test_GetData(); 
+                //Intialize data with the latest month
+                SpendingLogic.SpendingLogic spendingLogic = new SpendingLogic.SpendingLogic();
+                displayCategorizedTrasactionList = spendingLogic.GetDisplayCategorizedTransactionLatest();
+
+                if(displayCategorizedTrasactionList.Count>0)
+                {
+                    MultiView1.ActiveViewIndex = 1;
+                    ShowLatestMonthTransaction(displayCategorizedTrasactionList);
+
+                    //save current transaction list in session
+                    Session["displayCategorizedTrasactionList"] = displayCategorizedTrasactionList;
+                }
+                else
+                {
+                    //There are no transaction
+                    MultiView1.ActiveViewIndex = 0;
+                }
+            }
+            
         }
 
+        private void ShowLatestMonthTransaction(List<SpendingDataAccess.displayCategorizedTransaction>  displayCategorizedTrasactionList)
+        {
+            GridView1.DataSource = displayCategorizedTrasactionList.ToList();
+            GridView1.DataBind();
 
+            Series series = Chart1.Series["Series1"];
+            // Set series and legend tooltips
+            series.ToolTip = "#VALX: #VAL{C} dong";
+            series.LegendToolTip = "#PERCENT";
+            series.PostBackValue = "#INDEX";
+            series.LegendPostBackValue = "#INDEX";
+
+
+            // Set series visual attributes
+            series.ChartType = SeriesChartType.Pie;
+            series.ShadowOffset = 2;
+            //series.BorderColor = Color.DarkGray;
+            //series.CustomAttributes = "LabelStyle=Outside";
+
+            foreach (SpendingDataAccess.displayCategorizedTransaction transaction in displayCategorizedTrasactionList)
+            {
+                series.Points.AddXY(transaction.myDate.ToShortDateString(), transaction.Amt);
+            }
+        }
         void Test_GetData()
         {
             XElement doc = XElement.Load(Server.MapPath(@"~/SpendingAnalyzer/TestData.xml"));

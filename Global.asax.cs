@@ -36,7 +36,13 @@ namespace Demo2015_1
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
+            //remove all spendingAnalyzer sessions
+            //remove all session datas
+            Session.Remove("unCategorizedTransactionList");
+            Session.Remove("currentTransaction");
+            Session.Remove("filterCategoryList");
+            Session.Remove("categorizedTransactionList");
+            Session.Remove("categoryList");
         }
 
         protected void Session_End(object sender, EventArgs e)
